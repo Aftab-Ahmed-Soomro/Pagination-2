@@ -45,7 +45,7 @@ const page = () => {
           )
         })
       }
-      <button onClick={()=> handlePageChange(currentPage -1)} className='ms-6'>&lt;</button>
+      <button  disabled={currentPage < 1} onClick={()=> handlePageChange(currentPage -1)} className='ms-6'>&lt;</button>
       {/* {
         pageIndex
       } */}
@@ -57,7 +57,7 @@ const page = () => {
           page => <button key={page} onClick={() => handlePageChange(page - 1 )} className={page === currentPage + 1 ? "active" : ""}> {page} </button>
         )
       }
-      <button onClick={()=> handlePageChange(currentPage +1)}>&gt;</button>
+      <button  disabled={currentPage >= numberOfPages -1} onClick={()=> handlePageChange(currentPage +1)}>&gt;</button>
     </div>
   )
 }
